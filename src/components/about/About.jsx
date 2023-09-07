@@ -1,52 +1,41 @@
 import React from "react";
-import { motion } from "framer-motion";
-import Founder from "./Founder";
-import Menu from "./Menu";
-const Home = () => {
-  const options = {
-    initial: {
-      x: "-100%",
-      opacity: 0,
-    },
-    whileInView: {
-      x: 0,
-      opacity: 1,
-    },
-  };
+import { Link } from "react-router-dom";
+import { RiFindReplaceLine } from "react-icons/ri";
+import me from "../../assets/skj.jpg";
+const About = () => {
   return (
-    <>
-      <section className="home">
+    <section className="about">
+      <main>
+        <h1>About Us</h1>
+        <article>
+          <h4>Burger Shop</h4>
+          <p>
+            This is Burger Shop. The place for most tasty burgers on the enitre
+            earth.
+          </p>
+          <p>
+            Explore the various type of food and burgers. Click below to see the
+            menu
+          </p>
+          <Link to="/">
+            <RiFindReplaceLine />
+          </Link>
+        </article>
         <div>
-          <motion.h1 {...options}>Burger Shop</motion.h1>
-          <motion.p
-            {...options}
-            transition={{
-              delay: 0.2,
-            }}
-          >
-            Give yourself a tasty burger.
-          </motion.p>
+          <h2>Founder</h2>
+          <article>
+            <div>
+              <img src={me} alt="Founder" />
+              <h3>Nelson</h3>
+            </div>
+            <p>
+              I am Nelson, the founder of Burger Shop. Affiliated to God
+              Taste...
+            </p>
+          </article>
         </div>
-        <motion.a
-          href="#menu"
-          initial={{
-            y: "-100%",
-            opacity: 0,
-          }}
-          whileInView={{
-            y: 0,
-            opacity: 1,
-          }}
-          transition={{
-            delay: 0.4,
-          }}
-        >
-          Explore Menu
-        </motion.a>
-      </section>
-      <Menu />
-      <Founder />
-    </>
+      </main>
+    </section>
   );
 };
-export default Home;
+export default About;
